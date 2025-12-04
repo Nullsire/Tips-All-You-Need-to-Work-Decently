@@ -6,7 +6,7 @@
 
 - 向仓库中添加文件：`git add [files]`
 
-- 提交修改：`git commit`
+- 提交修改：`git commit -m "提交信息"`
 
 - 链接远程仓库：
 
@@ -26,9 +26,9 @@
 
 - 合并分支：`git merge [branch_name]`
 
-- 撤销提交：`git reset --soft/hard [commitID]`（soft 会保留 commitID 后的所有修改，hard 则不会）
+- 撤销提交（重置）：`git reset --soft/hard [commitID]`（将当前分支重置到指定 commitID。soft 会将 commitID 后的修改保留在暂存区，hard 则会直接丢弃这些修改，请谨慎使用）
 
-- 回退版本：`git revert [commitID]`（创建一次新的提交，经过该次提交，代码回退到 commitID 对应的代码版本）
+- 撤销指定提交：`git revert [commitID]`（新建一个提交，用来撤销指定 commitID 所做的修改，不影响后续的其他提交）
 
 ## VSCode Git 可视化界面常用操作
 
@@ -60,7 +60,7 @@
 
 点击 Sync Changes 即可
 
-### 同步远程仓库信息/c
+### 同步远程仓库信息
 
 ![同步远程仓库信息](fig/同步远程仓库信息.png)
 
@@ -74,9 +74,27 @@
 
 ![分支管理1](fig/分支管理1.png)
 
-![分支管理2](fig/分支管理2.png)
+- 分支切换：
 
+  ![分支管理2](fig/分支管理2.png)
 
+- 分支合并：
+
+  ![分支合并](fig/分支合并.png)
+
+- 分支合并冲突处理：
+
+  ![分支合并冲突处理1](fig/分支合并冲突处理1.png)
+
+  点击右下方 Resolve in Merge Editor 进入合并冲突处理界面
+
+  ![分支合并冲突处理2](fig/分支合并冲突处理2.png)
+
+  可以选择保留当前分支的版本还是引入将要合并进来的分支的版本
+
+  ![分支合并冲突处理3](fig/分支合并冲突处理3.png)
+
+  点击 Complete Merge 完成分支合并冲突处理
 
 ## 补充内容
 
