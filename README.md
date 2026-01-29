@@ -89,6 +89,8 @@ Tmux 是一款用于管理多个终端会话的命令行工具，它允许用户
 
 - `nvidia-smi`: 用于查看当前 GPU 使用情况，若想实时监控GPU使用情况，可使用组合指令 `watch -n 1 nvidia-smi`，其中 `-n` 用于指定刷新间隔（以秒为单位）
 
+- `nvcc --version`: 用于查看 CUDA 版本
+
 ### 补充建议
 
 - 在使用 GPU 前，检查 GPU 使用情况，避免 `OOM(out of memory)` 报错
