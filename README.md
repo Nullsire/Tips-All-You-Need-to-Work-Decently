@@ -12,24 +12,58 @@
 
 ### SSH
 
-#### Login
+#### 登录
 
 `ssh [-p [Port]] [username]@[server_ip]`
 
-#### Key Pair Management
+#### 密钥对管理
 
 - generate key pair: `ssh-keygen -t ed25519 [-p [Port]] [-C [email_address](format: "your_email@example.com")]`
 
 - add public key to remote server: `ssh-copy-id [username]@[server_ip]`
   > Only usable in Linux system, use WSL to run this command is recommended. Before running this command, remember to check whether your WSL and Windows system share the same key pair files.
 
-#### VSCode Remote Explorer
+#### 结合 VSCode 使用
 
-**TODO**
+- 安装 Remote-SSH extension 插件
+
+- 如图，打开 Remote Explorer ，点击 New Remote，按照示例输入 ssh 指令
+
+- 如图，可通过点击 Open SSH Config File 并选中 SSH 配置文件进行管理
 
 ### Tmux
 
-**TODO**
+#### 简介
+
+Tmux 是一款用于管理多个终端会话的命令行工具，它允许用户在一个终端窗口中同时运行和切换多个会话、窗口和面板。通过 tmux，用户可以在断开 SSH 连接后继续保持程序运行状态，随时重新连接继续工作，非常适合远程服务器管理和长期任务执行。
+
+#### 常用指令
+
+- `tmux ls`: 用于查看会话列表
+
+- `tmux new -s [session_name]`: 用于创建特定名称会话
+
+- `tmux attach -t [session_name]`: 用于连接指定名称会话
+
+- `tmux kill-session -t [session_name]`: 用于彻底关闭指定名称会话（会话中的进程被终止）
+
+#### 常用快捷键
+
+- `Ctrl+b d`: 挂起会话（会话中的指令会继续运行）
+
+- `Ctrl+b c`: 新建窗口 
+
+- `Ctrl+b ,`: 重命名窗口
+
+- `Ctrl+b %`: 水平分屏
+
+- `Ctrl+b "`: 垂直分屏
+
+- `Ctrl+b ?`: 查看所有快捷键
+
+#### 补充建议
+
+- 统一使用`Ctrl+b d`挂起会话，再用`tmux kill-session -t [session_name]`彻底关闭会话，避免误关闭会话导致进程终止（这也是没有上文提供关闭会话的指令的原因）
 
 ## GPU Machine 使用指南
 
@@ -37,7 +71,7 @@
 
 - `nvidia-smi`: 用于查看当前 GPU 使用情况，若想实时监控GPU使用情况，可使用组合指令 `watch -n 1 nvidia-smi`，其中 `-n` 用于指定刷新间隔（以秒为单位）
 
-### 建议
+### 补充建议
 
 - 在使用 GPU 前，检查 GPU 使用情况，避免 `OOM(out of memory)` 报错
 
@@ -143,7 +177,7 @@
 
   点击 Complete Merge 完成分支合并冲突处理
 
-### 其他
+### 补充建议
 
 - 如果不想让 git 追踪当前目录及子目录下的部分文件，可以编写 `.gitignore` 文件，该文件内的所有内容都不会被 git 追踪。
 
