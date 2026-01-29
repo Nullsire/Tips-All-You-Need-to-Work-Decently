@@ -21,7 +21,10 @@
 - generate key pair: `ssh-keygen -t ed25519 [-p [Port]] [-C [email_address](format: "your_email@example.com")]`
 
 - add public key to remote server: `ssh-copy-id [username]@[server_ip]`
-  > Only usable in Linux system, use WSL to run this command is recommended. Before running this command, remember to check whether your WSL and Windows system share the same key pair files.
+
+  > Only usable in Linux system, use WSL to run this command is recommended. Before running this command, remember to check whether your WSL and Windows system share the same key pair files. 
+
+> Note (IMPORTANT!): While it's free to share your pulic key (.pub file), DONT share your private key to ANYONE.
 
 #### 结合 VSCode 使用
 
@@ -29,7 +32,20 @@
 
 - 如图，打开 Remote Explorer ，点击 New Remote，按照示例输入 ssh 指令
 
+  ![SSH_add_remote_server](figs/SSH_add_remote_server.png)
+
 - 如图，可通过点击 Open SSH Config File 并选中 SSH 配置文件进行管理
+
+  ![SSH_config](figs/SSH_config.png)
+
+- SSH 配置文件和SSH指令 `ssh [-p [Port]] [username]@[server_ip]` 的对应关系如下：
+
+  ```
+  Host server_name(can be modified as you like)
+    HostName server_ip
+    Port port_num
+    User username 
+  ```
 
 ### Tmux
 
@@ -60,6 +76,8 @@ Tmux 是一款用于管理多个终端会话的命令行工具，它允许用户
 - `Ctrl+b "`: 垂直分屏
 
 - `Ctrl+b ?`: 查看所有快捷键
+
+> Note: 上述快捷键的使用方式是，先按`Ctrl`，按住不放的同时按下`b`，然后松开这两个键，再按剩下的键
 
 #### 补充建议
 
