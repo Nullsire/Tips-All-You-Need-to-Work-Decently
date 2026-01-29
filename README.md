@@ -22,7 +22,7 @@
 
 - add public key to remote server: `ssh-copy-id [username]@[server_ip]`
 
-  > Only usable in Linux system, use WSL to run this command is recommended. Before running this command, remember to check whether your WSL and Windows system share the same key pair files. 
+  > Only usable in Linux and MacOS system. For Windows user, run this command in WSL is recommended. Before running this command in WSL, remember to check whether your WSL and Windows system share the same key pair files. If your computer system is Windows and you don't have WSL, please hand in your public key to server manager.
 
 > Note (IMPORTANT!): While it's free to share your pulic key (.pub file), DONT share your private key to ANYONE.
 
@@ -200,3 +200,7 @@ Tmux 是一款用于管理多个终端会话的命令行工具，它允许用户
 - 如果不想让 git 追踪当前目录及子目录下的部分文件，可以编写 `.gitignore` 文件，该文件内的所有内容都不会被 git 追踪。
 
 - 一般来说，github 远程仓库上不建议存放太大的文件。
+
+## Slurm 使用指南
+
+**TODO**
