@@ -23,8 +23,8 @@
 - add public key to remote server: `ssh-copy-id [username]@[server_ip]`
 
   > Only usable in Linux and MacOS system. For Windows user, run this command in WSL is recommended. Before running this command in WSL, remember to check whether your WSL and Windows system share the same key pair files. If your computer system is Windows and you don't have WSL, please hand in your public key to server manager.
-
-> Note (IMPORTANT!): While it's free to share your pulic key (.pub file), DONT share your private key to ANYONE.
+  
+  > Note (IMPORTANT!): While it's free to share your pulic key (.pub file), DONT share your private key to ANYONE.
 
 #### 结合 VSCode 使用
 
